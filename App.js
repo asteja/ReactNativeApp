@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, Image, View } from 'react-native';
+import { StyleSheet, Text, TextField, Image, View } from 'react-native';
 
 class BananaImage extends Component {
   render() {
@@ -15,7 +15,15 @@ class BananaImage extends Component {
 class ImageDescription extends Component {
   render() {
     return(
-      <Text>Bananas of different varieties</Text>
+      <Text style={styles.font}>Bananas of different varieties</Text>
+    )
+  }
+}
+
+class UserNameLBL extends Component {
+  render() {
+    return(
+      <TextField style={styles.measurements}></TextField>
     )
   }
 }
@@ -26,6 +34,7 @@ export default class App extends React.Component {
       <View style={styles.container}>
         <BananaImage/>
         <ImageDescription/>
+        <UserNameLBL/>
       </View>
     );
   }
@@ -37,5 +46,12 @@ const styles = StyleSheet.create({
     backgroundColor: 'blue',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  font: {
+    color: 'white',
+  },
+  measurements: {
+    width: 100,
+    height: 100,
   },
 });
